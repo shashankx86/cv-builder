@@ -7,10 +7,13 @@
 }
 
 .header {
+    font-family: "Roboto";
     padding: 30px;
-    font-size: 2rem;
-    background-color: aliceblue;
+    font-size: 2.4rem;
+    background-color: rgb(46, 65, 84);
+    color: white;
 
     display: flex;
     justify-content: center;
+    box-shadow: 0 5px 5px rgba(0, 0, 0, 0.3);
 }
