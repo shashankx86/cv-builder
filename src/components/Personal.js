@@ -10,15 +10,15 @@ class Personal extends Component {
             <div className="personal">
                 <input
                     type={"text"}
-                    id="firstName"
-                    name="firstName"
-                    placeholder="First Name"
+                    id="name"
+                    name="name"
+                    placeholder="Name"
                 ></input>
                 <input
                     type={"text"}
-                    id="lastName"
-                    name="lastName"
-                    placeholder="Last Name"
+                    id="title"
+                    name="title"
+                    placeholder="Title"
                 ></input>
                 <input
                     type={"text"}
