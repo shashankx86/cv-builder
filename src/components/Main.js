@@ -34,7 +34,7 @@ class Main extends Component {
         let personalContent = {};
         for (const child of personalComponent.children) {
             let value = child.value;
-            let key = child.id;
+            let key = child.name;
 
             personalContent[key] = value;
         }
@@ -44,7 +44,7 @@ class Main extends Component {
             let educationContent = {};
             for (const child of component.children) {
                 let value = child.value;
-                let key = child.id;
+                let key = child.name;
 
                 educationContent[key] = value;
             }
@@ -57,7 +57,7 @@ class Main extends Component {
             let workContent = {};
             for (const child of component.children) {
                 let value = child.value;
-                let key = child.id;
+                let key = child.name;
 
                 workContent[key] = value;
             }
@@ -136,7 +136,8 @@ class Main extends Component {
         });
     }
 
-    deleteComponent() {
+    deleteComponent(index) {
+        //Deletes component based on index and resets indices to correct values
         console.log("delete me");
     }
 
