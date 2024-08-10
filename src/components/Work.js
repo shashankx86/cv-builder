@@ -6,48 +6,49 @@ class Work extends Component {
     }
 
     render() {
+        const { index, deleteComponent } = this.props;
         return (
             <div className="work">
                 <input
                     type={"text"}
-                    id="position"
+                    id={`position${index}`}
                     name="position"
                     placeholder="Position"
                 ></input>
                 <input
                     type={"text"}
-                    id="company"
+                    id={`company${index}`}
                     name="company"
                     placeholder="Company"
                 ></input>
                 <input
                     type={"text"}
-                    id="workCity"
+                    id={`workCity${index}`}
                     name="workCity"
                     placeholder="City"
                 ></input>
                 <input
                     type={"date"}
-                    id="workFrom"
+                    id={`workFrom${index}`}
                     name="workFrom"
                     placeholder="From"
                 ></input>
                 <input
                     type={"date"}
-                    id="workTo"
+                    id={`workTo${index}`}
                     name="workTo"
                     placeholder="To"
                 ></input>
                 <label htmlFor="workPresent">I currently work here</label>
                 <input
                     type={"checkbox"}
-                    id="workPresent"
+                    id={`workPresent${index}`}
                     name="workPresent"
                 ></input>
                 <button
                     onClick={(e) => {
                         e.preventDefault();
-                        this.props.deleteComponent();
+                        deleteComponent();
                     }}
                 >
                     Delete

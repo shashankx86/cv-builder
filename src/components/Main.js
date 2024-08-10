@@ -97,7 +97,9 @@ class Main extends Component {
     addWork() {
         const work = [];
         for (let i = 0; i < this.state.numberOfWork; i++) {
-            work.push(<Work deleteComponent={this.deleteComponent} />);
+            work.push(
+                <Work index={i} deleteComponent={this.deleteComponent} />
+            );
         }
 
         return work;
