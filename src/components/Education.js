@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import "../styles/formInput.css";
 
 class Education extends Component {
     constructor(props) {
@@ -24,21 +25,23 @@ class Education extends Component {
                 <input
                     type={"text"}
                     id={`degree${index}`}
+                    className="span2"
                     name="degree"
                     placeholder="Degree"
                 ></input>
                 <input
-                    type={"date"}
+                    type={"text"}
                     id={`uniFrom${index}`}
                     name="uniFrom"
                     placeholder="From"
                 ></input>
                 <input
-                    type={"date"}
+                    type={"text"}
                     id={`uniTo${index}`}
                     name="uniTo"
                     placeholder="To"
                 ></input>
+                {/* 
                 <label htmlFor={`uniPresent${index}`}>
                     I currently go here
                 </label>
@@ -47,7 +50,9 @@ class Education extends Component {
                     id={`uniPresent${index}`}
                     name="uniPresent"
                 ></input>
+                */}
                 <button
+                    className="deleteBtn span2"
                     onClick={(e) => {
                         e.preventDefault();
                         deleteComponent();

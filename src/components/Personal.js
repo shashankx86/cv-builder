@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import "../styles/formInput.css";
 
 class Personal extends Component {
     constructor() {
@@ -45,11 +46,12 @@ class Personal extends Component {
                     placeholder="Website"
                 ></input>
                 <textarea
-                    id="description"
-                    name="description"
-                    rows={4}
-                    cols={50}
-                    placeholder="Description (Optional)"
+                    id="profile"
+                    className="profile span2"
+                    name="profile"
+                    rows={8}
+                    cols={80}
+                    placeholder="Profile"
                 ></textarea>
             </div>
         );

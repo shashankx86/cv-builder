@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import "../styles/formInput.css";
 
 class Work extends Component {
     constructor(props) {
@@ -24,21 +25,23 @@ class Work extends Component {
                 <input
                     type={"text"}
                     id={`workCity${index}`}
+                    className="span2"
                     name="workCity"
                     placeholder="City"
                 ></input>
                 <input
-                    type={"date"}
+                    type={"text"}
                     id={`workFrom${index}`}
                     name="workFrom"
                     placeholder="From"
                 ></input>
                 <input
-                    type={"date"}
+                    type={"text"}
                     id={`workTo${index}`}
                     name="workTo"
                     placeholder="To"
                 ></input>
+                {/*  
                 <label htmlFor={`workPresent${index}`}>
                     I currently work here
                 </label>
@@ -47,7 +50,17 @@ class Work extends Component {
                     id={`workPresent${index}`}
                     name="workPresent"
                 ></input>
+                */}
+                <textarea
+                    id={`workDetail${index}`}
+                    className="workDetail span2"
+                    name="description"
+                    rows={8}
+                    cols={80}
+                    placeholder="Details"
+                ></textarea>
                 <button
+                    className="deleteBtn span2"
                     onClick={(e) => {
                         e.preventDefault();
                         deleteComponent();

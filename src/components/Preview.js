@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import "../styles/preview.css";
 
 class PopulatePersonal extends Component {
     constructor(props) {
@@ -23,8 +24,9 @@ class PopulatePersonal extends Component {
                         </p>
                     </div>
                 </div>
+                <hr className="personalDivide"></hr>
                 <div className="descriptionSection">
-                    {personalInfo.content.description}
+                    {personalInfo.content.profile}
                 </div>
             </div>
         );
@@ -98,11 +100,11 @@ class Preview extends Component {
             <div className="previewContainer">
                 <PopulatePersonal personalInfo={personalInfo} />
                 <div className="educationContainer">
-                    <h3>Education</h3>
+                    <h2 className="cvHeader">Education</h2>
                     <PopulateEducation educationInfoList={educationInfoList} />
                 </div>
                 <div className="workContainer">
-                    <h3>Work Experience</h3>
+                    <h2 className="cvHeader">Work Experience</h2>
                     <PopulateWork workInfoList={workInfoList} />
                 </div>
             </div>

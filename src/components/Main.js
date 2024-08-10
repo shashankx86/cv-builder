@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import uniqid from "uniqid";
+import "../styles/main.css";
 import Personal from "./Personal";
 import Education from "./Education";
 import Work from "./Work";
@@ -158,10 +159,17 @@ class Main extends Component {
                         {personal}
                         <h2>Education</h2>
                         {education}
-                        <button onClick={this.incrementEducation}>Add</button>
+                        <button
+                            className="addBtn"
+                            onClick={this.incrementEducation}
+                        >
+                            Add
+                        </button>
                         <h2>Work Experience</h2>
                         {work}
-                        <button onClick={this.incrementWork}>Add</button>
+                        <button className="addBtn" onClick={this.incrementWork}>
+                            Add
+                        </button>
                     </form>
                 </div>
                 <div className="preview">
