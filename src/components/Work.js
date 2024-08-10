@@ -54,8 +54,8 @@ class Work extends Component {
                 <textarea
                     id={`workDetail${index}`}
                     className="workDetail span2"
-                    name="description"
-                    rows={8}
+                    name="workDetail"
+                    rows={6}
                     cols={80}
                     placeholder="Details"
                 ></textarea>

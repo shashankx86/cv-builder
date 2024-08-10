@@ -7,7 +7,7 @@
 }
 
 .previewContainer {
-    padding: 20px;
+    padding: 40px;
     border: 1px solid black;
     height: 900px;
     width: 700px;
@@ -19,6 +19,11 @@
 
 .cvHeader {
     color: rgb(46, 65, 84);
+}
+
+.locationDate {
+    display: grid;
+    justify-items: end;
 }
 
 /*Personal Container*/
@@ -84,10 +89,16 @@
 }
 
 .degree {
-    font-size: 1.2rem;
+    font-size: 1.1rem;
+    font-weight: 600;
 }
 
 .uni {
+    font-size: 1.1rem;
+    font-style: italic;
+}
+
+.uniDates {
     font-style: italic;
 }
 
@@ -107,14 +118,25 @@
 }
 
 .workSection {
+    display: grid;
+    gap: 5px;
+}
+
+.workSectionMain {
     display: flex;
     justify-content: space-between;
 }
 
 .position {
-    font-size: 1.2rem;
+    font-size: 1.1rem;
+    font-weight: 600;
 }
 
 .company {
+    font-size: 1.1rem;
+    font-style: italic;
+}
+
+.workDates {
     font-style: italic;
 }

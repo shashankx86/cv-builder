@@ -42,14 +42,23 @@ class PopulateEducation extends Component {
         const { educationInfoList } = this.props;
         let educationSections = [];
         educationInfoList.forEach((element) => {
+            let dates = [];
+            if (element.content.uniFrom && element.content.uniTo) {
+                dates.push(
+                    <p className="uniDates">{`${element.content.uniFrom} - ${element.content.uniTo}`}</p>
+                );
+            } else {
+                dates.push(<p></p>);
+            }
             let section = (
                 <div className="educationSection">
                     <div>
                         <p className="degree">{element.content.degree}</p>
                         <p className="uni">{element.content.uni}</p>
                     </div>
-                    <div>
+                    <div className="locationDate">
                         <p className="uniCity">{element.content.uniCity}</p>
+                        {dates}
                     </div>
                 </div>
             );
@@ -68,16 +77,35 @@ class PopulateWork extends Component {
 
     render() {
         const { workInfoList } = this.props;
+
         let workSections = [];
         workInfoList.forEach((element) => {
+            let dates = [];
+            if (element.content.workFrom && element.content.workTo) {
+                dates.push(
+                    <p className="workDates">{`${element.content.workFrom} - ${element.content.workTo}`}</p>
+                );
+            } else {
+                dates.push(<p></p>);
+            }
             let section = (
                 <div className="workSection">
-                    <div>
-                        <p className="position">{element.content.position}</p>
-                        <p className="company">{element.content.company}</p>
+                    <div className="workSectionMain">
+                        <div>
+                            <p className="position">
+                                {element.content.position}
+                            </p>
+                            <p className="company">{element.content.company}</p>
+                        </div>
+                        <div className="locationDate">
+                            <p className="workCity">
+                                {element.content.workCity}
+                            </p>
+                            {dates}
+                        </div>
                     </div>
-                    <div>
-                        <p className="workCity">{element.content.workCity}</p>
+                    <div className="workSectionDetails">
+                        <p>{element.content.workDetail}</p>
                     </div>
                 </div>
             );
