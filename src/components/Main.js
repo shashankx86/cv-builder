@@ -20,13 +20,16 @@ class Main extends Component {
         this.incrementEducation = this.incrementEducation.bind(this);
         this.addWork = this.addWork.bind(this);
         this.incrementWork = this.incrementWork.bind(this);
+        this.deleteComponent = this.deleteComponent.bind(this);
     }
 
     addEducation() {
         const numberOfEducation = this.state.numberOfEducation;
         const education = [];
         for (let i = 0; i < numberOfEducation; i++) {
-            education.push(<Education />);
+            education.push(
+                <Education deleteComponent={this.deleteComponent} />
+            );
         }
 
         return education;
@@ -43,7 +46,7 @@ class Main extends Component {
         const numberOfWork = this.state.numberOfWork;
         const work = [];
         for (let i = 0; i < numberOfWork; i++) {
-            work.push(<Work />);
+            work.push(<Work deleteComponent={this.deleteComponent} />);
         }
 
         return work;
@@ -54,6 +57,10 @@ class Main extends Component {
         this.setState({
             numberOfWork: (this.state.numberOfWork += 1),
         });
+    }
+
+    deleteComponent() {
+        console.log("delete me");
     }
 
     render() {

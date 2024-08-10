@@ -1,8 +1,8 @@
 import React, { Component } from "react";
 
 class Work extends Component {
-    constructor() {
-        super();
+    constructor(props) {
+        super(props);
     }
 
     render() {
@@ -44,6 +44,14 @@ class Work extends Component {
                     id="workPresent"
                     name="workPresent"
                 ></input>
+                <button
+                    onClick={(e) => {
+                        e.preventDefault();
+                        this.props.deleteComponent();
+                    }}
+                >
+                    Delete
+                </button>
             </div>
         );
     }

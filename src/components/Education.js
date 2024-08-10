@@ -1,8 +1,8 @@
 import React, { Component } from "react";
 
 class Education extends Component {
-    constructor() {
-        super();
+    constructor(props) {
+        super(props);
     }
 
     render() {
@@ -50,6 +50,14 @@ class Education extends Component {
                     id="uniPresent"
                     name="uniPresent"
                 ></input>
+                <button
+                    onClick={(e) => {
+                        e.preventDefault();
+                        this.props.deleteComponent();
+                    }}
+                >
+                    Delete
+                </button>
             </div>
         );
     }
