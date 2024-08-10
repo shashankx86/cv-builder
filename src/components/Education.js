@@ -7,7 +7,7 @@ class Education extends Component {
     }
 
     render() {
-        const { index, deleteComponent } = this.props;
+        const { index, deleteEducation } = this.props;
         return (
             <div className="education">
                 <input
@@ -55,7 +55,7 @@ class Education extends Component {
                     className="deleteBtn span2"
                     onClick={(e) => {
                         e.preventDefault();
-                        deleteComponent();
+                        deleteEducation(index);
                     }}
                 >
                     Delete

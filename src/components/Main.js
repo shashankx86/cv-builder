@@ -22,7 +22,8 @@ class Main extends Component {
         this.incrementEducation = this.incrementEducation.bind(this);
         this.addWork = this.addWork.bind(this);
         this.incrementWork = this.incrementWork.bind(this);
-        this.deleteComponent = this.deleteComponent.bind(this);
+        this.deleteEducation = this.deleteEducation.bind(this);
+        this.deleteWork = this.deleteWork.bind(this);
 
         this.handleFormChange = this.handleFormChange.bind(this);
     }
@@ -88,7 +89,7 @@ class Main extends Component {
         const education = [];
         for (let i = 0; i < this.state.numberOfEducation; i++) {
             education.push(
-                <Education index={i} deleteComponent={this.deleteComponent} />
+                <Education index={i} deleteEducation={this.deleteEducation} />
             );
         }
 
@@ -98,9 +99,7 @@ class Main extends Component {
     addWork() {
         const work = [];
         for (let i = 0; i < this.state.numberOfWork; i++) {
-            work.push(
-                <Work index={i} deleteComponent={this.deleteComponent} />
-            );
+            work.push(<Work index={i} deleteWork={this.deleteWork} />);
         }
 
         return work;
@@ -137,9 +136,40 @@ class Main extends Component {
         });
     }
 
-    deleteComponent(index) {
+    deleteEducation(deleteIndex) {
         //Deletes component based on index and resets indices to correct values
-        console.log("delete me");
+        const newInfoList = this.state.educationInfoList.slice();
+        const filteredList = newInfoList.filter(
+            (element) => element.index !== deleteIndex
+        );
+
+        //Reset indices to correct values
+        filteredList.forEach((element, i) => {
+            element.index = i;
+        });
+
+        this.setState({
+            numberOfEducation: this.state.numberOfEducation - 1,
+            educationInfoList: filteredList,
+        });
+    }
+
+    deleteWork(deleteIndex) {
+        //Deletes component based on index and resets indices to correct values
+        const newInfoList = this.state.workInfoList.slice();
+        const filteredList = newInfoList.filter(
+            (element) => element.index !== deleteIndex
+        );
+
+        //Reset indices to correct values
+        filteredList.forEach((element, i) => {
+            element.index = i;
+        });
+
+        this.setState({
+            numberOfWork: this.state.numberOfWork - 1,
+            workInfoList: filteredList,
+        });
     }
 
     render() {

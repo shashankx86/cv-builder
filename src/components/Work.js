@@ -7,7 +7,7 @@ class Work extends Component {
     }
 
     render() {
-        const { index, deleteComponent } = this.props;
+        const { index, deleteWork } = this.props;
         return (
             <div className="work">
                 <input
@@ -63,7 +63,7 @@ class Work extends Component {
                     className="deleteBtn span2"
                     onClick={(e) => {
                         e.preventDefault();
-                        deleteComponent();
+                        deleteWork(index);
                     }}
                 >
                     Delete
