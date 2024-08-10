@@ -1,0 +1,39 @@
+/*Stylesheet for personal Input*/
+
+.personal {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 5px;
+}
+
+.education {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 5px;
+}
+
+.work {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 5px;
+}
+
+.span2 {
+    grid-column: span 2;
+}
+
+input,
+textarea {
+    padding: 3px;
+}
+
+.deleteBtn {
+    font-size: 1.3rem;
+    font-weight: 600;
+    padding: 5px 0;
+    background-color: rgb(51, 51, 51);
+    color: white;
+
+    border: none;
+    border-radius: 5px;
+}
