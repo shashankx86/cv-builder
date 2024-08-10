@@ -58,6 +58,16 @@
     gap: 5px;
 }
 
+.contactItem {
+    display: flex;
+    gap: 8px;
+    align-items: center;
+}
+
+.contactIcon {
+    height: 15px;
+}
+
 .personalDivide {
     height: 2px;
     background-color: rgb(46, 65, 84);

@@ -1,6 +1,11 @@
 import React, { Component } from "react";
 import "../styles/preview.css";
 
+import emailIcon from "../assets/email.png";
+import telIcon from "../assets/smartphone-call.png";
+import portfolioIcon from "../assets/web.png";
+import locationIcon from "../assets/location-pin.png";
+
 class PopulatePersonal extends Component {
     constructor(props) {
         super(props);
@@ -8,6 +13,50 @@ class PopulatePersonal extends Component {
 
     render() {
         const { personalInfo } = this.props;
+
+        const contactInfo = [];
+        if (personalInfo.content.email) {
+            contactInfo.push(
+                <div className="contactItem">
+                    <img className="contactIcon" src={emailIcon} alt=""></img>
+                    <p className="email">{personalInfo.content.email}</p>
+                </div>
+            );
+        }
+        if (personalInfo.content.tel) {
+            contactInfo.push(
+                <div className="contactItem">
+                    <img className="contactIcon" src={telIcon} alt=""></img>
+                    <p className="tel">{personalInfo.content.tel}</p>
+                </div>
+            );
+        }
+        if (personalInfo.content.web) {
+            contactInfo.push(
+                <div className="contactItem">
+                    <img
+                        className="contactIcon"
+                        src={portfolioIcon}
+                        alt=""
+                    ></img>
+                    <p className="web">{personalInfo.content.web}</p>
+                </div>
+            );
+        }
+
+        if (personalInfo.content.address) {
+            contactInfo.push(
+                <div className="contactItem">
+                    <img
+                        className="contactIcon"
+                        src={locationIcon}
+                        alt=""
+                    ></img>
+                    <p className="address">{personalInfo.content.address}</p>
+                </div>
+            );
+        }
+
         return (
             <div className="personalContainer">
                 <div className="personalSection">
@@ -15,14 +64,7 @@ class PopulatePersonal extends Component {
                         <p className="name">{personalInfo.content.name}</p>
                         <p className="title">{personalInfo.content.title}</p>
                     </div>
-                    <div className="contactInfo">
-                        <p className="tel">{personalInfo.content.tel}</p>
-                        <p className="email">{personalInfo.content.email}</p>
-                        <p className="web">{personalInfo.content.web}</p>
-                        <p className="address">
-                            {personalInfo.content.address}
-                        </p>
-                    </div>
+                    <div className="contactInfo">{contactInfo}</div>
                 </div>
                 <hr className="personalDivide"></hr>
                 <div className="descriptionSection">
