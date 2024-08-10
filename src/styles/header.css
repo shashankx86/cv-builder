@@ -1,0 +1,16 @@
+/*Stylesheet for Header*/
+
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+.header {
+    padding: 30px;
+    font-size: 2rem;
+    background-color: aliceblue;
+
+    display: flex;
+    justify-content: center;
+}

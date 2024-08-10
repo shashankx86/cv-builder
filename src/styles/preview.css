@@ -1,0 +1,120 @@
+/*Stylesheet for CV preview*/
+
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+.previewContainer {
+    padding: 20px;
+    border: 1px solid black;
+    height: 900px;
+    width: 700px;
+
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.cvHeader {
+    color: rgb(46, 65, 84);
+}
+
+/*Personal Container*/
+.personalContainer {
+    padding: 5px;
+    min-height: 100px;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.personalSection {
+    min-height: 100px;
+    display: flex;
+    justify-content: space-between;
+}
+
+.name {
+    color: rgb(46, 65, 84);
+    font-size: 3rem;
+    font-weight: 700;
+}
+
+.title {
+    color: rgb(46, 65, 84);
+    font-size: 1.6rem;
+}
+
+.contactInfo {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+
+.personalDivide {
+    height: 2px;
+    background-color: rgb(46, 65, 84);
+    border: none;
+}
+
+.descriptionSection {
+    word-wrap: normal;
+}
+/*Education Container*/
+.educationContainer {
+    padding: 5px;
+    min-height: 100px;
+
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.educationSections {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.educationSection {
+    display: flex;
+    justify-content: space-between;
+}
+
+.degree {
+    font-size: 1.2rem;
+}
+
+.uni {
+    font-style: italic;
+}
+
+/*Work Container*/
+.workContainer {
+    padding: 5px;
+    min-height: 100px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.workSections {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.workSection {
+    display: flex;
+    justify-content: space-between;
+}
+
+.position {
+    font-size: 1.2rem;
+}
+
+.company {
+    font-style: italic;
+}
