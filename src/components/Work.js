@@ -39,7 +39,9 @@ class Work extends Component {
                     name="workTo"
                     placeholder="To"
                 ></input>
-                <label htmlFor="workPresent">I currently work here</label>
+                <label htmlFor={`workPresent${index}`}>
+                    I currently work here
+                </label>
                 <input
                     type={"checkbox"}
                     id={`workPresent${index}`}

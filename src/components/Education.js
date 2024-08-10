@@ -28,12 +28,6 @@ class Education extends Component {
                     placeholder="Degree"
                 ></input>
                 <input
-                    type={"text"}
-                    id={`subject${index}`}
-                    name="subject"
-                    placeholder="Subject"
-                ></input>
-                <input
                     type={"date"}
                     id={`uniFrom${index}`}
                     name="uniFrom"
@@ -45,7 +39,9 @@ class Education extends Component {
                     name="uniTo"
                     placeholder="To"
                 ></input>
-                <label htmlFor="uniPresent">I currently go here</label>
+                <label htmlFor={`uniPresent${index}`}>
+                    I currently go here
+                </label>
                 <input
                     type={"checkbox"}
                     id={`uniPresent${index}`}
