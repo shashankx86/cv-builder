@@ -12,12 +12,15 @@ class Main extends Component {
 
         this.state = {
             personalInfo: { id: uniqid(), index: 0, content: {} },
+
             educationInfoList: [{ id: uniqid(), index: 0, content: {} }],
             numberOfEducation: 1,
+
             workInfoList: [{ id: uniqid(), index: 0, content: {} }],
             numberOfWork: 1,
         };
 
+        this.addEducation = this.addEducation.bind(this);
         this.addEducation = this.addEducation.bind(this);
         this.incrementEducation = this.incrementEducation.bind(this);
         this.addWork = this.addWork.bind(this);
@@ -30,7 +33,7 @@ class Main extends Component {
 
     handleFormChange() {
         const personalComponent = document.querySelector(".personal");
-        const educationalComponents = document.querySelectorAll(".education");
+        const educationComponents = document.querySelectorAll(".education");
         const workComponents = document.querySelectorAll(".work");
 
         let personalContent = {};
@@ -42,7 +45,7 @@ class Main extends Component {
         }
 
         let educationContentList = this.state.educationInfoList.slice();
-        educationalComponents.forEach((component, index) => {
+        educationComponents.forEach((component, index) => {
             let educationContent = {};
             for (const child of component.children) {
                 let value = child.value;
@@ -139,36 +142,70 @@ class Main extends Component {
     deleteEducation(deleteIndex) {
         //Deletes component based on index and resets indices to correct values
         const newInfoList = this.state.educationInfoList.slice();
-        const filteredList = newInfoList.filter(
+        const filteredInfoList = newInfoList.filter(
             (element) => element.index !== deleteIndex
         );
 
         //Reset indices to correct values
-        filteredList.forEach((element, i) => {
+        filteredInfoList.forEach((element, i) => {
             element.index = i;
+        });
+
+        //Transfers input values to correct component after deletion
+        const educationComponents = document.querySelectorAll(".education");
+        educationComponents.forEach((component, i) => {
+            if (i !== educationComponents.length - 1) {
+                for (const child of component.children) {
+                    let key = child.name;
+                    let newValue = filteredInfoList[i].content[key];
+
+                    if (newValue) {
+                        child.value = newValue;
+                    } else {
+                        child.value = "";
+                    }
+                }
+            }
         });
 
         this.setState({
             numberOfEducation: this.state.numberOfEducation - 1,
-            educationInfoList: filteredList,
+            educationInfoList: filteredInfoList,
         });
     }
 
     deleteWork(deleteIndex) {
         //Deletes component based on index and resets indices to correct values
         const newInfoList = this.state.workInfoList.slice();
-        const filteredList = newInfoList.filter(
+        const filteredInfoList = newInfoList.filter(
             (element) => element.index !== deleteIndex
         );
 
         //Reset indices to correct values
-        filteredList.forEach((element, i) => {
+        filteredInfoList.forEach((element, i) => {
             element.index = i;
+        });
+
+        //Transfers input values to correct component after deletion
+        const workComponents = document.querySelectorAll(".work");
+        workComponents.forEach((component, i) => {
+            if (i !== workComponents.length - 1) {
+                for (const child of component.children) {
+                    let key = child.name;
+                    let newValue = filteredInfoList[i].content[key];
+
+                    if (newValue) {
+                        child.value = newValue;
+                    } else {
+                        child.value = "";
+                    }
+                }
+            }
         });
 
         this.setState({
             numberOfWork: this.state.numberOfWork - 1,
-            workInfoList: filteredList,
+            workInfoList: filteredInfoList,
         });
     }
 
